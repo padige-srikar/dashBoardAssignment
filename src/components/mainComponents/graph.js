@@ -21,8 +21,8 @@ const roundedBarPlugin = {
     beforeDraw: chart => {
         const {
             ctx,
-            chartArea: { left, top, right, bottom, width, height },
-            scales: { x, y },
+            chartArea: {width},
+            // scales: { x, y }, 
         } = chart;
         ctx.save();
 
