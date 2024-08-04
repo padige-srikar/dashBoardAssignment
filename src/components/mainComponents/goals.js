@@ -57,9 +57,3 @@ export default function Goals() {
         </>
     );
 }
-
-{
-    /* <Box sx={{ bgcolor: '#464c50', width: 25, height: 25, borderRadius: '50%', textAlign: 'center' }}>
-<KeyboardArrowRightOutlinedIcon />
-</Box> */
-}
