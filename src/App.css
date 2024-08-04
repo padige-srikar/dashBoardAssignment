@@ -1,38 +1,243 @@
-.App {
-  text-align: center;
+/* General styles for body and html */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container styles */
+.container {
+    height: 100%; /* Full viewport height */
+    /* height: 100vh; */
+    width: 65px; /* Initial width */
+    max-width: 100px; /* Maximum width */
+    background-color: #22272e;
+    padding: 1px;
+    text-align: left;
+    position: fixed;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Navbar {
+    min-width: 85vh;
+    height: 60px;
+    width: 100%;
+    background-color: #22272e;
+    /* test only */
+    position: fixed;
+    top: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Responsive adjustments for .container */
+@media only screen and (max-width: 430px) and (max-height: 932px) {
+    .container {
+        height: 100%;
+        /* height: 100vh; */
+        max-height: 100vh;
+        min-height: 100vh;
+        width: 100%;
+        max-width: 100%; /* Ensure it does not exceed 100% width */
+        height: auto; /* Allow height to adjust based on content */
+        position: relative; /* Change from fixed to relative */
+    }
+    .Navbar {
+        min-width: 85vh;
+        height: 60px;
+        width: 100%;
+        background-color: #22272e;
+        /* test only */
+        position: fixed;
+        top: 0;
+    }
+    /* .main {
+        position: fixed;
+        left: 130px;
+        overflow: scroll;
+    } */
 }
 
-.App-link {
-  color: #61dafb;
+/* Navbar styles */
+
+/* Container1 styles */
+.container1 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #111116;
+    height: 100vh;
+    align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Responsive adjustments for .container1 */
+@media only screen and (max-width: 430px) and (max-height: 932px) {
+    .container1 {
+        height: auto; /* Allow height to adjust based on content */
+        padding: 20px; /* Add some padding */
+        flex-direction: column; /* Stack items vertically */
+    }
+}
+
+/* Progress styles */
+.progress {
+    width: 75px;
+    height: 75px;
+    font-size: 10px;
+    color: #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: #07070c;
+    text-align: center;
+    line-height: 75px; /* Center text vertically */
+    margin-left: 10px; /* Adjust left margin */
+    /* margin-bottom: 20px;  */
+    /* Add bottom margin for spacing */
+}
+
+/* Responsive adjustments for .progress */
+@media (max-width: 430px) and (max-height: 932px) {
+    .progress {
+        width: 50px; /* Reduce size on small screens */
+        height: 50px;
+        line-height: 50px; /* Center text vertically */
+        margin-left: 0; /* Remove left margin */
+        /* margin-bottom: 10px;  */
+        /* Adjust bottom margin */
+    }
+}
+
+/* Progress after pseudo-element styles */
+.progress::after {
+    content: '%';
+    position: relative;
+    z-index: 100;
+    top: -62px;
+}
+
+/* Adjusting .progress::after for smaller .progress */
+@media (max-width: 430px) and (max-height: 932px) {
+    .progress::after {
+        top: -42px;
+        /* Adjust positioning for smaller .progress */
+    }
+}
+
+/* Progress title styles */
+.progress .title {
+    position: relative;
+    z-index: 100;
+    /* top: -62px; */
+}
+
+/* Progress overlay styles */
+.progress .overlay {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #07070c;
+}
+
+/* Progress left and right styles */
+.progress .left,
+.progress .right {
+    /* width: 50%;
+    height: 100%; */
+    width: 37%;
+    height: 82%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 10px solid #4f4fda;
+    border-radius: 100px 0px 0px 100px;
+    border-right: 0;
+    transform-origin: right;
+}
+
+/* Progress left animation */
+.progress .left {
+    animation: load1 1s linear forwards;
+}
+
+/* Progress right animation adjustments */
+.progress:nth-of-type(2) .right,
+.progress:nth-of-type(3) .right {
+    animation: load2 0.5s linear forwards 1s;
+}
+
+/* Progress right animation adjustments for first and last type */
+.progress:last-of-type .right,
+.progress:first-of-type .right {
+    animation: load3 0.8s linear forwards 1s;
+}
+
+/* Keyframes for progress animations */
+@keyframes load1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes load2 {
+    0% {
+        z-index: 100;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        z-index: 100;
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes load3 {
+    0% {
+        z-index: 100;
+        transform: rotate(180deg);
+    }
+
+    100% {
+        z-index: 100;
+        transform: rotate(315deg);
+    }
+}
+
+/* Adjustments for larger screens (desktops and large tablets) */
+@media (min-width: 768px) {
+    .container {
+        width: 80px; /* Slightly wider for larger screens */
+        max-width: 120px; /* Maximum width adjustment */
+    }
+
+    .progress {
+        /* width: 100px;  */
+        /* Larger size on big screens */
+        /* height: 100px; */
+        width: 75px;
+        height: 75px;
+        line-height: 100px; /* Center text vertically */
+    }
+
+    .progress::after {
+        top: -85px; /* Adjust positioning for larger .progress */
+    }
+
+    .progress .title {
+        /* top: -85px;  */
+        /* Adjust positioning for larger .progress */
+        top: -8px;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 1200px) {
+    .main {
+        overflow: scroll;
+    }
 }
