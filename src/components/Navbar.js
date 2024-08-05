@@ -6,7 +6,6 @@ import SearchIcon from '@mui/icons-material/Search';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
-// import DashboardIcon from '@mui/icons-material/Dashboard';
 import Stack from '@mui/material/Stack';
 
 export default function Navbar() {
@@ -82,7 +81,11 @@ export default function Navbar() {
                         }}>
                         <Stack direction='row' spacing={2}>
                             {iconObject.map((n, index) => {
-                                return <Box sx={{ bgcolor: '#464c50', width: 35, height: 35, borderRadius: '50%', textAlign: 'center' }}>{n['icon']}</Box>;
+                                return (
+                                    <Box key={index} sx={{ bgcolor: '#464c50', width: 35, height: 35, borderRadius: '50%', textAlign: 'center' }}>
+                                        {n['icon']}
+                                    </Box>
+                                );
                             })}
                         </Stack>
                     </Box>

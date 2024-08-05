@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import '../../App.css';
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(() => ({
     backgroundColor: '#22272e',
     height: '115px',
     width: '385px',
@@ -27,13 +27,13 @@ export default function Profit() {
                         </Stack>
                     </Box>
                     <Box>
-                        <div class='progress'>
-                            <span class='title timer' data-from='0' data-to='70' data-speed='1500'>
+                        <div className='progress'>
+                            <span className='title timer' data-from='0' data-to='70' data-speed='1500'>
                                 70%
                             </span>
-                            <div class='overlay'></div>
-                            <div class='left'></div>
-                            <div class='right'></div>
+                            <div className='overlay'></div>
+                            <div className='left'></div>
+                            <div className='right'></div>
                         </div>
                         <span style={{ color: 'white', fontSize: '10px', marginRight: '10px' }}>The values here have been round off</span>
                     </Box>

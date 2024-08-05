@@ -10,7 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(() => ({
     backgroundColor: '#22272e',
     textAlign: 'left',
     height: '230px',

@@ -6,7 +6,7 @@ import Divider from '@mui/material/Divider';
 import '../../App.css';
 import StarIcon from '@mui/icons-material/Star';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(() => ({
     backgroundColor: '#22272e',
     height: '230px',
     width: '385px',
@@ -16,7 +16,7 @@ export default function Review() {
     return (
         <>
             <Item>
-                <Typography sx={{ color: 'white', fontSize: '17px', paddingLeft: '12px', paddingTop: '3px' }}>Customer's Feedback</Typography>
+                <Typography sx={{ color: 'white', fontSize: '17px', paddingLeft: '12px', paddingTop: '3px' }}> Customers Feedback</Typography>
                 <Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', marginLeft: '12px' }}>
                         <img src='/image2.jpg' alt='Mr.Bond' style={{ width: 35, height: 35, borderRadius: '50%', marginRight: '11px' }} />

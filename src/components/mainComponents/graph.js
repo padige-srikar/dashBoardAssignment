@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box} from '@mui/material';
+import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(() => ({
     backgroundColor: '#22272e',
     // textAlign: 'center',
     height: '155px',
@@ -21,8 +21,8 @@ const roundedBarPlugin = {
     beforeDraw: chart => {
         const {
             ctx,
-            chartArea: {width},
-            // scales: { x, y }, 
+            chartArea: { width },
+            // scales: { x, y },
         } = chart;
         ctx.save();
 

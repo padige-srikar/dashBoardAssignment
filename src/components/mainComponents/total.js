@@ -10,7 +10,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(() => ({
     backgroundColor: '#22272e',
     // textAlign: 'center',
     height: '115px',
@@ -97,7 +97,7 @@ export default function Total() {
 
                 {totalObject.map((obj, index) => {
                     return (
-                        <Item>
+                        <Item key={index}>
                             <Box sx={{ marginTop: '12px', marginLeft: '15px' }}>{obj['bag']}</Box>
                             <Typography sx={{ color: 'white', fontSize: '10px', marginTop: '5px', marginLeft: '14px' }}>{obj['name']}</Typography>
                             <Box sx={{ display: 'flex', justifyContent: 'space-between', marginRight: '15px', marginLeft: '15px', marginTop: '5px' }}>

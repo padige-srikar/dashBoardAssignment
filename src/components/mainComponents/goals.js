@@ -8,7 +8,7 @@ import LunchDiningOutlinedIcon from '@mui/icons-material/LunchDiningOutlined';
 import AdjustOutlinedIcon from '@mui/icons-material/AdjustOutlined';
 import RestaurantMenuOutlinedIcon from '@mui/icons-material/RestaurantMenuOutlined';
 import '../../App.css';
-const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(() => ({
     backgroundColor: '#22272e',
     height: '155px',
     width: '385px',
@@ -39,7 +39,7 @@ export default function Goals() {
                 {goalsObject.map((obj, index) => {
                     return (
                         <>
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <Box key={index} sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <>
                                     <Stack direction='row' spacing={3} sx={{ marginTop: '13px', marginLeft: '15px' }}>
                                         <Box sx={{ bgcolor: obj['color'], width: 35, height: 35, borderRadius: '50%', textAlign: 'center' }}>{obj['icon']}</Box>
